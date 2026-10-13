@@ -1,0 +1,10 @@
+{
+  "description": "ProofCam expected hashes for sample fixtures",
+  "sample_image": {
+    "filename": "sample.jpg",
+    "sha256": "c29c93cbc17a303db93dd50d2fde48c24818d36dc79a519363519bba5d7a0bde"
+  },
+  "sample_payload": {
+    "canonical_sha256": "4b68424ecf5c53aeaf71f9cfd05bbad6152a5539fa9e4fb90e0c3fa4f40f06a9"
+  }
+}

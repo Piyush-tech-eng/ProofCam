@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+target/
+.anchor/
+*.so
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+devnet.json
+*-keypair.json
+
+# Solana / Anchor
+test-ledger/
+.anchor/
+
+# Android
+apps/android-capture/.gradle/
+apps/android-capture/build/
+apps/android-capture/app/build/
+apps/android-capture/local.properties
+*.apk
+*.aab
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test artifacts
+coverage/
+.nyc_output/
+.proofcam-data/
+
+# Logs
+*.log
+npm-debug.log*

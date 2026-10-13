@@ -1,0 +1,17 @@
+{
+  "name": "proofcam",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ProofCam — media-integrity system anchored on Solana",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "clean": "pnpm -r clean",
+    "dev:api": "pnpm --filter @proofcam/api build && pnpm --filter @proofcam/api start",
+    "dev:web": "pnpm --filter @proofcam/web start"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

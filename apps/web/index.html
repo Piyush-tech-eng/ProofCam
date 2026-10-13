@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a24">
+  <title>ProofCam — Media provenance demo</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="ProofCam home"><span class="brand-icon">P</span> proofcam</a><span class="network-pill"><i></i> LOCAL DEMO NETWORK</span></header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">MEDIA PROVENANCE, MADE VERIFIABLE</div>
+      <h1>Trust the file.<br><span>Check the evidence.</span></h1>
+      <p>Register an image commitment and verify the exact bytes later. Each result keeps file integrity, capture evidence, and AI-risk assessment separate.</p>
+      <div class="demo-notice"><strong>Prototype mode</strong><span>Records are stored locally. This demo does not write to Solana and a browser upload is not proof of camera origin.</span></div>
+    </section>
+    <div class="layout">
+      <section class="panel" aria-labelledby="register-title">
+        <div class="section-kicker">01 · CREATE A RECORD</div>
+        <h2 id="register-title">Register an image</h2>
+        <p class="muted">A temporary browser key signs the capture package. The server validates the signature and saves the record in the local demo registry.</p>
+        <label class="dropzone" for="register-file"><span class="upload-icon">↑</span><strong id="register-filename">Choose an image</strong><span>PNG, JPEG, or WebP · up to 10 MB</span><input id="register-file" type="file" accept="image/png,image/jpeg,image/webp"></label>
+        <button id="register-button" class="button primary" disabled>Sign and register</button>
+        <div id="register-result" class="inline-result" aria-live="polite"></div>
+      </section>
+      <section class="panel" aria-labelledby="verify-title">
+        <div class="section-kicker">02 · CHECK A FILE</div>
+        <h2 id="verify-title">Verify against a record</h2>
+        <p class="muted">Use the original image, an edited copy, or an image with no record. Choose the saved capture ID to compare against that specific record.</p>
+        <label class="field-label" for="capture-id">Capture ID <span>(optional)</span></label>
+        <input id="capture-id" class="text-input" autocomplete="off" placeholder="Paste a capture ID to check that record">
+        <label class="dropzone compact" for="verify-file"><span class="upload-icon">↑</span><strong id="verify-filename">Choose a file to verify</strong><span>Exact bytes are hashed; images are not re-encoded</span><input id="verify-file" type="file" accept="image/*"></label>
+        <button id="verify-button" class="button secondary" disabled>Verify image</button>
+        <div id="verification-result" aria-live="polite"></div>
+      </section>
+    </div>
+    <section class="marketplace panel">
+      <div class="marketplace-copy"><div class="section-kicker">03 · MARKETPLACE PREVIEW</div><h2>A listing badge driven by verification</h2><p class="muted">The listing starts unverified. After registration, the API's file-match response drives its badge; local demo records stay labeled as local.</p></div>
+      <article class="listing-card" id="listing-card">
+        <div class="listing-image-wrap"><img id="listing-image" alt="Image for the demonstration resale listing"><span class="listing-placeholder" id="listing-placeholder">Register an image to preview this listing</span></div>
+        <div class="listing-details"><div class="listing-title">Demonstration resale listing</div><div class="listing-subtitle">Seller submitted image · ProofCam check</div><div class="listing-status"><span class="badge unknown" id="listing-badge">Awaiting verification</span><span class="origin-label" id="listing-origin">No record checked</span></div></div>
+      </article>
+    </section>
+    <section class="how"><div><div class="section-kicker">WHAT THE RESULT MEANS</div><h2>Three signals.<br>Three honest answers.</h2></div><div class="signal-list"><article><span class="signal-mark blue">01</span><div><h3>File match</h3><p>Does the image's exact SHA-256 match a selected record?</p></div></article><article><span class="signal-mark green">02</span><div><h3>Capture evidence</h3><p>What signature or device-attestation evidence is available?</p></div></article><article><span class="signal-mark amber">03</span><div><h3>AI-risk estimate</h3><p>A separate detector estimate. It cannot override a file match.</p></div></article></div></section>
+    <footer><span>PROOFCAM · PROTOTYPE</span><span>Integrity signals are not proof that a pictured event happened.</span></footer>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
