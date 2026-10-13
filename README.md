@@ -1,5 +1,7 @@
 # ProofCam
 
+![ProofCam camera and verification mark](apps/web/proofcam-mark.svg)
+
 ProofCam is a media-integrity proof of concept for resale listings. It reports file integrity, capture evidence, and optional AI-risk estimates as separate signals. A matching file hash proves byte-level correspondence to a record; it does not prove that the depicted scene is real.
 
 ## Current build
